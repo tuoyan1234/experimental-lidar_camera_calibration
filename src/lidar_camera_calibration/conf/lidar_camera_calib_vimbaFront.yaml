@@ -1,0 +1,5 @@
+﻿lidar_camera_calibration:
+  camera_frame_topic: /cam0image
+  camera_info_topic: /cam0ctrl
+  velodyne_topic: /os1_cloud_node/points
+

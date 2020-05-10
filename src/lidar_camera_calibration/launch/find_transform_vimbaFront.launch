@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- bag playback -->
+  <param name ="/use_sim_time" value="true"/>
+  <node pkg="rosbag" type="play" name="playbag" output="screen"
+	  args="/home/thuy/testdata/rosbags/2020-04-25-17-07-23_twoArucoMarkers_ousterVimbaFront_filtered_cam0image_ousterPoints.bag --clock"/>
+
+  <!-- ArUco mapping -->
+  <node pkg="aruco_mapping" type="aruco_mapping" name="aruco_mapping" output="screen">
+    <remap from="/image_raw" to="/cam0image"/>
+
+    <param name="calibration_file" type="string" value="$(find aruco_mapping)/data/vimbaFront.ini" />
+    <param name="num_of_markers" type="int" value="2" />
+    <param name="marker_size" type="double" value="0.203"/>
+    <param name="space_type" type="string" value="plane" />
+    <param name="roi_allowed" type="bool" value="false" />
+  </node>
+
+  <!-- -->
+  <rosparam command="load" file="$(find lidar_camera_calibration)/conf/lidar_camera_calib_vimbaFront.yaml" />
+  <node pkg="lidar_camera_calibration" type="find_transform" name="find_transform" output="screen" />
+
+</launch>
+

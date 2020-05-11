@@ -41,7 +41,7 @@ main(int argc, char **argv)
 
   ros::init(argc,argv,"aruco_mapping");
   ros::NodeHandle nh;
-      
+
   // Aruco mapping object
   aruco_mapping::ArucoMapping obj(&nh);
 

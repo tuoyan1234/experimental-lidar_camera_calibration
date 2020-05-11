@@ -4,7 +4,7 @@
   <!-- bag playback -->
   <param name ="/use_sim_time" value="true"/>
   <node pkg="rosbag" type="play" name="playbag" output="screen"
-	  args="-r 0.5 /home/thuy/testdata/rosbags/2020-05-10-17-40-22_twoArucoMarkers_50cmFromCamera_robotMaxRaiseUp_filteredFirstFewFrames.bag --clock"/>
+	  args="-r 0.5 /home/thuy/testdata/rosbags/2020-05-11-11-31-18_twoArucoMarkers_50cmFromCamera_robotMaxRaiseUp_GOOD.bag --clock"/>
   <!--
     /home/thuy/testdata/rosbags/2020-04-25-17-07-23_twoArucoMarkers_ousterVimbaFront_filtered_cam0image_ousterPoints_ousterNotPublishTime.bag
   -->
